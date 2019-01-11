@@ -1,8 +1,9 @@
-#ifndef Environment_hpp
-#define Environment_hpp
+#pragma once
 
 #include "Agents.hpp"
 #include <vector>
+
+#define SIZE 9
 
 struct Cell {
     Agent* actor;
@@ -11,7 +12,7 @@ struct Cell {
     bool path_cell;
 };
 
-const int size = 9;
+// const int size = 9;
 
 class Environment {
 private:
@@ -20,7 +21,7 @@ private:
     Bear *bear;
     WoodCutter *woodcutter;
     Granny *granny;
-    Cell forest[size][size];
+    Cell forest[SIZE][SIZE];
     vector < pair<unsigned, unsigned> > unused;
 public:
     Environment();
@@ -38,6 +39,3 @@ public:
     void addGranny();
     bool checkRange(Agent*);
 };
-
-
-#endif

@@ -10,15 +10,15 @@ const int bear_g = 1000;
 const int start_value = 12345;
 int dirx[4] = {0, 1, 0, -1};
 int diry[4] = {1, 0, -1, 0};
-bool checked[size][size];
+bool checked[SIZE][SIZE];
 int endx;
 int endy;
 
 // Constructor
 GameLauncher::GameLauncher() {
     map.fillEnvironment();
-    for (int i = 0; i < size; i++)
-        for (int j = 0; j < size; j++)
+    for (int i = 0; i < SIZE; i++)
+        for (int j = 0; j < SIZE; j++)
             checked[i][j] = false;
 }
 
@@ -166,8 +166,8 @@ void GameLauncher::playWithBack() {
                 numberOfSteps = -1;
                 break;
             } else {
-                for (int i = 0; i < size; i++)
-                    for (int j = 0; j < size; j++)
+                for (int i = 0; i < SIZE; i++)
+                    for (int j = 0; j < SIZE; j++)
                         checked[i][j] = false;
                 //cout << endl << "RISK MODE IS ON!!!" << endl;
                 riskMode = true;
@@ -212,7 +212,7 @@ struct _Cell {
  * Try to solve the problem with A* algorithm 
  */
 void GameLauncher::playWithAstar() {
-    _Cell hero_map[size][size];
+    _Cell hero_map[SIZE][SIZE];
     numberOfSteps = 0;
     start_time = clock();
         
@@ -222,8 +222,8 @@ void GameLauncher::playWithAstar() {
     endy = hero->map_data.granny.y;
     
     // Initialize field
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
             hero_map[i][j].x = i;
             hero_map[i][j].y = j;
             hero_map[i][j].h = abs(i - endx) + abs(j - endy);
@@ -236,9 +236,9 @@ void GameLauncher::playWithAstar() {
     // Create priority queue to store next best cell to move
     priority_queue<_Cell> toCheck;
     // Array of checked cells
-    bool checked[size][size];
-    for (int i = 0; i < size; i++)
-        for (int j = 0; j < size; j++)
+    bool checked[SIZE][SIZE];
+    for (int i = 0; i < SIZE; i++)
+        for (int j = 0; j < SIZE; j++)
             checked[i][j] = false;
     
     // Set start default values
@@ -343,7 +343,7 @@ void GameLauncher::playWithAstar() {
  * Check bound of the field
  */
 bool GameLauncher::checkBounds(int i, int j) {
-    if (i < size && i >= 0 && j < size && j >= 0)
+    if (i < SIZE && i >= 0 && j < SIZE && j >= 0)
         return true;
     else
         return false;

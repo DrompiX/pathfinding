@@ -2,8 +2,6 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
 Environment::Environment() {
     for (int i = 0; i < 9; i++)
         for (int j = 0; j < 9; j++) {
@@ -39,7 +37,7 @@ void Environment::setPathCell(unsigned i, unsigned j) {
 }
 
 bool Environment::checkBounds(unsigned i, unsigned j) {
-    if (i < size && j < size)
+    if (i < SIZE && j < SIZE)
         return true;
     else
         return false;
@@ -48,8 +46,8 @@ bool Environment::checkBounds(unsigned i, unsigned j) {
 void Environment::fillEnvironment() {
     rrh = new RRH(0, 0);
     setAgent(0, 0, rrh);
-    for (int i = 0; i < size; i++)
-        for (int j = 0; j < size; j++)
+    for (int i = 0; i < SIZE; i++)
+        for (int j = 0; j < SIZE; j++)
             if (!(i == 0 && j == 0))
                 unused.push_back(make_pair(i, j));
     addWolf();

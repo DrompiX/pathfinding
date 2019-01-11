@@ -1,5 +1,4 @@
-#ifndef Agents_hpp
-#define Agents_hpp
+#pragma once
 
 #include <string>
 
@@ -69,5 +68,3 @@ public:
             unsigned wx, unsigned wy, bool h);
     void do_action();
 };
-
-#endif /* Agents_hpp */

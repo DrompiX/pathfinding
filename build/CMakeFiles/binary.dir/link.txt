@@ -1,0 +1,1 @@
+/usr/bin/clang++   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/binary.dir/src/main.cpp.o CMakeFiles/binary.dir/src/Agents.cpp.o CMakeFiles/binary.dir/src/Environment.cpp.o CMakeFiles/binary.dir/src/GameLauncher.cpp.o  -o binary 

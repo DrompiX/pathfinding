@@ -3,13 +3,11 @@
 #include <queue>
 #include <cstdio>
 #include <ctime>
-#include "Agents.hpp"
-#include "Environment.hpp"
 #include "GameLauncher.hpp"
 
-using namespace std;
-
 const int TESTS = 100;
+
+using namespace std;
 
 int main(void) {
     srand(time(0));

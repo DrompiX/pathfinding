@@ -1,5 +1,4 @@
-#ifndef GameLauncher_hpp 
-#define GameLauncher_hpp
+#pragma once
 
 #include "Environment.hpp"
 #include "Agents.hpp"
@@ -14,7 +13,6 @@ class GameLauncher {
 public:
     GameLauncher();
     void playWithBack();
-    //vector< pair<int, int> >* playWithAstar();
     void playWithAstar();
     bool checkBounds(int, int);
     void printMap(Environment);
@@ -23,5 +21,3 @@ public:
     int getNumberOfSteps() { return numberOfSteps; }
     unsigned getTime() { return end_time - start_time; }
 };
-
-#endif
