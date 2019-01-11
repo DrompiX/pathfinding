@@ -25,7 +25,6 @@ private:
     vector < pair<unsigned, unsigned> > unused;
 public:
     Environment();
-    ~Environment();
     Cell& getCell(unsigned, unsigned);
     void setAgent(unsigned, unsigned, Agent*);
     void setBearFeel(unsigned, unsigned);

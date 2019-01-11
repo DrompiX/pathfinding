@@ -14,10 +14,11 @@ public:
     GameLauncher();
     void playWithBack();
     void playWithAstar();
-    bool checkBounds(int, int);
     void printMap(Environment);
     void printMap();
-    pair <int, int>* nextMove(int, int, Environment& a, bool);
     int getNumberOfSteps() { return numberOfSteps; }
     unsigned getTime() { return end_time - start_time; }
+private:
+    pair <int, int>* nextMove(int, int, Environment& a, bool);
+    bool checkBounds(int, int);
 };

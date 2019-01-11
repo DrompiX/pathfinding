@@ -12,16 +12,13 @@ Environment::Environment() {
         }
 }
 
-Environment::~Environment() {}
-
 Cell& Environment::getCell(unsigned i, unsigned j) {
     return forest[i][j];
 }
 
 void Environment::setAgent(unsigned i, unsigned j, Agent* a) {
     forest[i][j].actor = a;
-    if (a != nullptr)
-        (*a).setPosition(i, j);
+    if (a != nullptr) a->setPosition(i, j);
 }
 
 void Environment::setBearFeel(unsigned i, unsigned j) {
